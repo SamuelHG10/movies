@@ -8,5 +8,9 @@ interface RemoteApiService {
     @GET("popular?language=en-US&api_key=55957fcf3ba81b137f8fc01ac5a31fb5")
     suspend fun getMovies():MovieResponse
 
+    @Throws(Exception::class)
+    @GET("popular?page={pid}language=en-US&api_key=55957fcf3ba81b137f8fc01ac5a31fb5")
+    suspend fun getMovies(@Path("pid") pid:Int):MovieResponse
+
 }
 
